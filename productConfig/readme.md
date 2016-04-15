@@ -10,10 +10,10 @@
   ```
   npm install -g jasmine-node
   npm install
+  jasmine-node . --config folder productConfig
   ```
 
-jasmine-node . --config folder productConfig
-  ## Automated Test Cases
+## Automated Test Cases
 01. Call WAYNEENTERPRISES/PRE-C/SAT/SATSGT and make sure response code is 200 and response contain data from Biz level config.
 
  ```
@@ -56,13 +56,6 @@ jasmine-node . --config folder productConfig
   * status: 200
   * path: productconfig/WAYNEENTERPRISES/K12/InvalidK12PRECO/KSPSATKT
  ```
-08. Call WAYNEENTERPRISES/HEALTH/IELTS/InvalidIELTSOS and make sure response code is 200 and response contain content only from Biz level config.
-
- ```
-  * method: GET
-  * status: 200
-  * path: productconfig/WAYNEENTERPRISES/HEALTH/IELTS/InvalidIELTSOS
- ```
 07. Call WAYNEENTERPRISES/HEALTH/IELTS/IELTSOS and make sure response code is 200 and response contain marged content from both Biz and Product level config.
 
  ```
@@ -70,18 +63,18 @@ jasmine-node . --config folder productConfig
   * status: 200
   * path: productconfig/WAYNEENTERPRISES/HEALTH/IELTS/IELTSOS
  ```
+08. Call WAYNEENTERPRISES/HEALTH/IELTS/InvalidIELTSOS and make sure response code is 200 and response contain content only from Biz level config.
+
+ ```
+  * method: GET
+  * status: 200
+  * path: productconfig/WAYNEENTERPRISES/HEALTH/IELTS/InvalidIELTSOS
+ ```
 09. Call WAYNEENTERPRISES/GRAD/GRE/GRENC and make sure response code is 200 and response contain marged content from all Biz, Sbu, Program and Product level config.
 
  ```
   * method: GET
   * status: 200
-  * path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
- ```
-11. Call WAYNEENTERPRISES/GRAD/GRE/GRENC with invalid atom-api-key and make sure response code is 401 and response proper error message.
-
- ```
-  * method: GET
-  * status: 401
   * path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
  ```
 10. Call WAYNEENTERPRISES/GRAD/GRE/GRENC without atom-api-key and make sure response code is 401 and response proper error message.
@@ -92,6 +85,13 @@ jasmine-node . --config folder productConfig
   * path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
  ```
 12. Call WAYNEENTERPRISES/GRAD/GRE/GRENC without Authorization Bearer Token and make sure response code is 401 and response proper error message.
+
+ ```
+  * method: GET
+  * status: 401
+  * path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
+ ```
+11. Call WAYNEENTERPRISES/GRAD/GRE/GRENC with invalid atom-api-key and make sure response code is 401 and response proper error message.
 
  ```
   * method: GET
