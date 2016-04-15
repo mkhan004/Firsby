@@ -1,5 +1,5 @@
 -
-  id: testId
+  id: testId1
   dependsOn: otherTestId
   path: /api/path
   method: GET
