@@ -1,0 +1,83 @@
+---
+  # jasmine-node . --config folder productConfig
+  # DEV
+  url: http://localhost:3000
+  defaultPath: api/v1/
+  port: 443
+  project: Product Config API
+  environment: QA
+  requestFile: requests.yaml
+  apiKey: atomqateam
+  tokenSecret: electron
+
+  # QA
+  url: https://qa-productconfig.atom.ktp.io
+  defaultPath: api/v1/
+  port: 443
+  project: Product Config API
+  environment: QA
+  requestFile: requests.yaml
+  apiKey: atomqateam
+  tokenSecret: electron
+
+  # STG
+  url: https://stg-productconfig.atom.ktp.io
+  defaultPath: api/v1/
+  port: 443
+  project: Product Config API
+  environment: QA
+  requestFile: requests.yaml
+  apiKey: atomqateam
+  tokenSecret: f717uxhMStolc0CQgca58WtLLtfcculN
+
+  # PROD
+  url: https://productconfig.atom.ktp.io
+  defaultPath: api/v1/
+  port: 443
+  project: Product Config API
+  environment: QA
+  requestFile: requests.yaml
+  apiKey: atomqateam
+  tokenSecret: f717uxhMStolc0CQgca58WtLLtfcculN
+
+  # QA Gateway
+  url: https://qa-api.atom.ktp.io
+  defaultPath: h/
+  port: 443
+  project: Product Config API
+  environment: QA
+  requestFile: requests.yaml
+  apiKey: atomqateam
+  tokenSecret: electron
+
+  # STG Gateway
+  url: https://stg-api.atom.ktp.io
+  defaultPath: h/
+  port: 443
+  project: Product Config API
+  environment: QA
+  requestFile: requests.yaml
+  apiKey: atomqateam
+  tokenSecret: f717uxhMStolc0CQgca58WtLLtfcculN
+
+  # STG Gateway
+  url: https://stg-api.atom.ktp.io
+  defaultPath: h/
+  port: 443
+  project: Product Config API
+  environment: QA
+  requestFile: requests.yaml
+  apiKey: atomqateam
+  tokenSecret: f717uxhMStolc0CQgca58WtLLtfcculN
+
+  # PROD Gateway
+  url: https://api.atom.ktp.io
+  defaultPath: h/
+  port: 443
+  project: Product Config API
+  environment: QA
+  requestFile: requests.yaml
+  apiKey: atomqateam
+  tokenSecret: f717uxhMStolc0CQgca58WtLLtfcculN
+
+

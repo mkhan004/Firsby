@@ -1,0 +1,425 @@
+---
+# Scenario 1: Valid config only in Biz level.
+-
+  id: 1
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/PRE-C/SAT/SATSGT
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/PRE-C/SAT/SATSGT and make sure response code is 200 and response contain data from Biz level config.
+  validate:
+    statusCode: 200
+    json:
+      sections:
+        -
+          id: 'studyplan-WayneDefault'
+          title: Wayne Study Plan
+          node: Wayne another new node
+          imageCdnUrl: 'https://atom-global-qa-WAYNEENTERPRISES-PRE-C.s3.amazonaws.com/images/lsat/section-tests.svg'
+          backgroundCdnUrl: 'https://atom-global-qa-WAYNEENTERPRISES-PRE-C.s3.amazonaws.com/images/lsat/prep-test.svg'
+          logoCdnUrl: 'https://atom-global-qa-WAYNEENTERPRISES-PRE-C.s3.amazonaws.com/images/lsat/get-started.svg'
+          CdnUrl: 'https://atom-global-qa-WAYNEENTERPRISES-PRE-C.s3.amazonaws.com/images/lsat/section-tests.svg'
+          testcdnurl: '/images/lsat/qbank-2000.svg'
+      studyPlan:
+        enableMakeUpSessions: 'Wayne true'
+        sessionTotalTimeText: Wayne Total Time in This Session
+        imageCdnUrl: 'https://atom-global-qa-WAYNEENTERPRISES-PRE-C.s3.amazonaws.com/images/lsat/section-tests.svg'
+        backgroundCdnUrl: 'https://atom-global-qa-WAYNEENTERPRISES-PRE-C.s3.amazonaws.com/images/lsat/prep-test.svg'
+        logoCdnUrl: 'https://atom-global-qa-WAYNEENTERPRISES-PRE-C.s3.amazonaws.com/images/lsat/get-started.svg'
+        CdnUrl: 'https://atom-global-qa-WAYNEENTERPRISES-PRE-C.s3.amazonaws.com/images/lsat/section-tests.svg'
+        testcdnurl: '/images/lsat/qbank-2000.svg'
+-
+  id: 2
+  method: GET
+  path: productconfig/InvalidWAYNEENTERPRISES/PRE-C/SAT/SATSGT
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call InvalidWAYNEENTERPRISES/PRE-C/SAT/SATSGT and make sure response code is 404 and response contain proper error message.
+  validate:
+    statusCode: 404
+
+# Scenario 2: Valid config only in Biz and Sbu level.
+-
+  id: 3
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/NURSING/NCLEX/NCLEXP
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/NURSING/NCLEX/NCLEXP and make sure response code is 200 and response contain marged content from both Biz and Sbu level config.
+  validate:
+    statusCode: 200
+    json:
+      sections:
+        -
+          id: 'studyplan'
+          title: Overwride from Sbu level Study Plan
+          sbu: marged from sbu level
+      studyPlan:
+        enableMakeUpSessions: 'Wayne true'
+        sessionTotalTimeText: Wayne Total Time in This Session
+-
+  id: 4
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/InvalidNURSING/NCLEX/NCLEXP
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WANEENTERPRISES/InvalidNURSING/NCLEX/NCLEXP and make sure response code is 200 and response contain content only from Biz level config.
+  validate:
+    statusCode: 200
+    json:
+      sections:
+        -
+          id: 'studyplan-WayneDefault'
+          title: Wayne Study Plan
+          node: Wayne another new node
+      studyPlan:
+        enableMakeUpSessions: 'Wayne true'
+        sessionTotalTimeText: Wayne Total Time in This Session
+    notjson:
+      sections:
+        -
+          sbu: undefined
+
+# Scenario 3: Valid config only in Biz and Program level.
+-
+  id: 5
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/K12/K12PRECO/KSPSATKT
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/K12/K12PRECO/KSPSATKT and make sure response code is 200 and response contain overwrite array content from Program level config.
+  validate:
+    statusCode: 200
+    json:
+      sections:
+        -
+          array: overwrite by array from Program level
+          title: Override from Program level Study Plan
+          program: marged from program level
+      studyPlan:
+        enableMakeUpSessions: 'Wayne true'
+        sessionTotalTimeText: Wayne Total Time in This Session
+    notjson:
+      blah: undefined
+-
+  id: 6
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/K12/InvalidK12PRECO/KSPSATKT
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/K12/InvalidK12PRECO/KSPSATKT and make sure response code is 200 and response contain content only from Biz level config.
+  validate:
+    statusCode: 200
+    json:
+      sections:
+        -
+          id: 'studyplan-WayneDefault'
+          title: Wayne Study Plan
+          node: Wayne another new node
+      studyPlan:
+        enableMakeUpSessions: 'Wayne true'
+        sessionTotalTimeText: Wayne Total Time in This Session
+    notjson:
+      sections:
+        -
+          program: undefined
+
+# Scenario 4: Valid config only in Biz and Product level.
+-
+  id: 7
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/HEALTH/IELTS/IELTSOS
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/HEALTH/IELTS/IELTSOS and make sure response code is 200 and response contain marged content from both Biz and Product level config.
+  validate:
+    statusCode: 200
+    json:
+      sections:
+        -
+          title: Override from Product level Study Plan
+          product: marged from product level
+          #id: 'studyplan-WayneDefault'
+      studyPlan:
+        enableMakeUpSessions: 'Wayne true'
+        sessionTotalTimeText: Wayne Total Time in This Session
+    notjson:
+      sections:
+        -
+          id: 'invalid-WayneDefaultFailed'
+-
+  id: 8
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/HEALTH/IELTS/InvalidIELTSOS
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/HEALTH/IELTS/InvalidIELTSOS and make sure response code is 200 and response contain content only from Biz level config.
+  validate:
+    statusCode: 200
+    json:
+      sections:
+        -
+          id: 'studyplan-WayneDefault'
+          title: Wayne Study Plan
+          node: Wayne another new node
+      studyPlan:
+        enableMakeUpSessions: 'Wayne true'
+        sessionTotalTimeText: Wayne Total Time in This Session
+    notjson:
+      blah: undefined
+
+# Scenario 5: Valid config in Biz, Sbu, Program and Product level.
+-
+  id: 9
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/GRAD/GRE/GRENC and make sure response code is 200 and response contain marged content from all Biz, Sbu, Program and Product level config.
+  validate:
+    statusCode: 200
+    json:
+      sections:
+        -
+          title: Override from Product level Study Plan
+          product: marged from product level
+          id: 'studyplan-WayneDefault'
+      studyPlan:
+        enableMakeUpSessions: 'Wayne true'
+    notjson:
+      sections:
+        -
+          id: 'studyplan-WayneDefault'
+          sbu: marged from sbu level
+          program: marged from program level
+-
+  id: 10
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/GRAD/GRE/GRENC without atom-api-key and make sure response code is 401 and response proper error message.
+  validate:
+    statusCode: 401
+-
+  id: 11
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
+  headers:
+    atom-api-key: invalidatomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/GRAD/GRE/GRENC with invalid atom-api-key and make sure response code is 401 and response proper error message.
+  validate:
+    statusCode: 401
+-
+  id: 12
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
+  headers:
+    atom-api-key: atomqateam
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/GRAD/GRE/GRENC without Authorization Bearer Token and make sure response code is 401 and response proper error message.
+  validate:
+    statusCode: 401
+-
+  id: 13
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
+  headers:
+    atom-api-key: atomqateam
+  profile: invalidAppIdProfile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/GRAD/GRE/GRENC with invalid Authorization Bearer Token using invalid appId and make sure response code is 404 and response proper error message.
+  validate:
+    statusCode: 404
+-
+  id: 13.1
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
+  headers:
+    atom-api-key: atomqateam
+  profile: invalidProfile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/GRAD/GRE/GRENC with invalid Authorization Bearer Token using no appId and make sure response code is 403 and response proper error message.
+  validate:
+    statusCode: 403
+-
+  id: 14
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/GRAD/GRE/InvalidGRENC
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/GRAD/GRE/InvalidGRENC and make sure response code is 200 and response contain content only from Biz, Sbu and Program level config.
+  validate:
+    statusCode: 200
+    json:
+      sections:
+        -
+          title: Override from Program level Study Plan
+          program: marged from program level
+          id: 'studyplan-WayneDefault'
+      studyPlan:
+        enableMakeUpSessions: 'Wayne true'
+    notjson:
+      sections:
+        -
+          product: undefined
+          id: 'studyplan-WayneDefault'
+          sbu: marged from sbu level
+-
+  id: 15
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/GRAD/InvalidGRE/GRENC
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/GRAD/InvalidGRE/GRENC and make sure response code is 200 and response contain content only from Biz and Sbu level config.
+  validate:
+    statusCode: 200
+    json:
+      sections:
+        -
+          title: Overwride from Sbu level Study Plan
+          sbu: marged from sbu level
+          id: 'studyplan-WayneDefault'
+        -
+          id: practice
+      studyPlan:
+        enableMakeUpSessions: 'Wayne true'
+    notjson:
+      sections:
+        -
+          id: 'studyplan-WayneDefault'
+          product: undefined
+-
+  id: 16
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/InvalidGRAD/GRE/GRENC
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/InvalidGRAD/GRE/GRENC and make sure response code is 200 and response contain content only from Biz level config.
+  validate:
+    statusCode: 200
+    json:
+      sections:
+        -
+          id: 'studyplan-WayneDefault'
+          title: Wayne Study Plan
+      studyPlan:
+        enableMakeUpSessions: 'Wayne true'
+    notjson:
+      sections:
+        -
+          sbu: undefined
+          program: undefined
+          product: undefined
+
+# Scenario 7: Malformed yaml code only in Sbu level config.
+-
+  id: 17
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/GRADM/GRADMP/GRADMPROD
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/GRADM/GRADMP/GRADMPROD and make sure response code is 500 and response contain proper error message.
+  validate:
+    statusCode: 500
+
+# Scenario 8: Malformed yaml code only in Program level config.
+-
+  id: 18
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/GRADM2/GRADMP/GRADMPROD
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/GRADM2/GRADMP/GRADMPROD and make sure response code is 500 and response contain proper error message.
+  validate:
+    statusCode: 500
+-
+  id: 19
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/GRADM2/InvalidGRADMP/GRADMPROD
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/GRADM2/InvalidGRADMP/GRADMPROD and make sure response code is 200 and response contain content only from Biz and Sbu level config.
+  validate:
+    statusCode: 200
+    json:
+      sections:
+        -
+          title: Overwride from Sbu level Study Plan
+          sbu: marged from sbu level
+          id: 'studyplan-WayneDefault'
+      studyPlan:
+        enableMakeUpSessions: 'Wayne true'
+        sessionTotalTimeText: Wayne Total Time in This Session
+    notjson:
+      sections:
+        -
+          id: 'studyplan-WayneDefault'
+
+# Scenario 9: Malformed yaml code only in Product level config.
+-
+  id: 20
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/GRADM3/GRADMP/GRADMPROD
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/GRADM3/GRADMP/GRADMPROD and make sure response code is 500 and response contain proper error message.
+  validate:
+    statusCode: 500
+-
+  id: 21
+  method: GET
+  path: productconfig/WAYNEENTERPRISES/GRADM3/GRADMP/InvalidGRADMPROD
+  headers:
+    atom-api-key: atomqateam
+  profile: profile.json
+  #afterPlugin: printResponse
+  description: Call WAYNEENTERPRISES/GRADM3/GRADMP/InvalidGRADMPROD and make sure response code is 200 and response contain content only from Biz, Sbu and program level config.
+  validate:
+    statusCode: 200
+    json:
+      sections:
+        -
+          title: Override from Program level Study Plan
+          program: marged from program level
+          id: 'studyplan-WayneDefault'
+      studyPlan:
+        enableMakeUpSessions: 'Wayne true'
+    notjson:
+      sections:
+        -
+          title: Override from Program level Study Plan

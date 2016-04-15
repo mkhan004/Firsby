@@ -1,0 +1,39 @@
+{
+  "statusCode": 401,
+  "body": "{\"meta\":{\"version\":1,\"status_code\":401},\"results\":{\"error\":{\"type\":\"KeyError\",\"message\":\"'atomqateams' is not a valid key.\"}}}",
+  "headers": {
+    "access-control-allow-credentials": "true",
+    "access-control-allow-headers": "Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token",
+    "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS, PATCH, HEAD",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "content-type, content-length, X-ApiaxleProxy-Qps-Left, X-ApiaxleProxy-Qpd-Left",
+    "content-type": "application/json",
+    "date": "Tue, 12 Jan 2016 21:36:51 GMT",
+    "server": "nginx/1.6.2",
+    "version": "20151118",
+    "content-length": "126",
+    "connection": "Close"
+  },
+  "request": {
+    "uri": {
+      "protocol": "https:",
+      "slashes": true,
+      "auth": null,
+      "host": "qa-api.atom.ktp.io",
+      "port": 443,
+      "hostname": "qa-api.atom.ktp.io",
+      "hash": null,
+      "search": null,
+      "query": null,
+      "pathname": "//h/productconfig/wayneenterprises/grad/mcat/mcatvlk",
+      "path": "//h/productconfig/wayneenterprises/grad/mcat/mcatvlk",
+      "href": "https://qa-api.atom.ktp.io//h/productconfig/wayneenterprises/grad/mcat/mcatvlk"
+    },
+    "method": "GET",
+    "headers": {
+      "atom-api-key": "atomqateams",
+      "authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiYXBwbGljYXRpb24iLCJhcHBJZCI6ImF0b213ZWIiLCJidXNpbmVzc2VzIjpbeyJpZCI6IktUUCIsIm5hbWUiOiJLVFAifSx7ImlkIjoiV0FZTkVFTlRFUlBSSVNFUyIsIm5hbWUiOiJXYXluZSBFbnRlcnByaXNlcyJ9XSwidmVyc2lvbiI6MSwiaWF0IjoxNDUyNjMyNzg3LCJleHAiOjEwMDAwMDAwMDAwMDAwMDAwMCwiaXNzIjoiZ2F0ZXdheSJ9.cWZyo5vu9z_O1ymgA8Xorkh2qaZ23kSdS0jALfEd24U",
+      "content-type": "application/x-www-form-urlencoded"
+    }
+  }
+}

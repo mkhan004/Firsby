@@ -1,0 +1,19 @@
+-
+  id: testId
+  dependsOn: otherTestId
+  path: /api/path
+  method: GET
+  query:
+    param1: value
+    param2: value
+  headers:
+    value: value
+    value: '{{otherTestId.123}}'
+  profile: filePath or yaml
+  body: filePath or yaml
+  validate:
+    statusCode: 200
+    headers:
+      key: value
+    json: handlebars string, filepath or just yaml
+    jsonSchema: only js filepath for now

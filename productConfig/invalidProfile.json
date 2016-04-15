@@ -1,0 +1,17 @@
+{
+  "type": "application",
+  "businesses": [
+    {
+      "id": "KTP",
+      "name": "KTP"
+    },
+    {
+      "id": "WAYNEENTERPRISES",
+      "name": "Wayne Enterprises"
+    }
+  ],
+  "version": 1,
+  "iat": 1452632787,
+  "exp": 99999999999999999,
+  "iss": "gateway"
+}

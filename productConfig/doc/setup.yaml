@@ -1,0 +1,12 @@
+---
+  # PROD Gateway
+  project: Product Config API
+
+  businessRules:
+    1: This is first rule.
+    2: It is another rule.
+
+  toRun:
+    1: npm install -g jasmine-node
+    2: npm install
+    3: jasmine-node . --config folder productConfig

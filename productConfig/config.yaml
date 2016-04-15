@@ -1,0 +1,22 @@
+---
+  # PROD Gateway
+  url: https://api.atom.ktp.io
+  defaultPath: h/
+  port: 443
+  environment: QA
+  requestFile: requests.yaml
+  apiKey: atomqateam
+  tokenSecret: f717uxhMStolc0CQgca58WtLLtfcculN
+
+
+  project: Product Config API
+
+  businessRules:
+    1: This is first rule.
+    2: It is another rule.
+
+  toRun:
+    1: npm install -g jasmine-node
+    2: npm install
+    3: jasmine-node . --config folder productConfig
+

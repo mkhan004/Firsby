@@ -1,0 +1,33 @@
+{
+  "name": "atom.frisby",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "printf \"\\033[1;31mPlease install jasmine-node globally\\033[0m\\n\"",
+    "test": "echo \"requires jasmine-node\" && jasmine-node ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.2.0",
+    "co": "^4.6.0",
+    "csv-parse": "^1.0.1",
+    "express": "~4.0.0",
+    "frisby": "^0.8.5",
+    "handlebars": "^4.0.5",
+    "jasmine": "^2.4.1",
+    "js-yaml": "^3.4.6",
+    "jsonschema": "^1.1.0",
+    "jsonwebtoken": "^5.4.1",
+    "lodash": "^3.10.1",
+    "mkdirp": "^0.5.1",
+    "request": "^2.70.0",
+    "stack-trace": "0.0.9",
+    "supertest": "^1.0.1",
+    "traverse": "^0.6.6",
+    "underscore": "^1.8.3",
+    "yargs": "^3.31.0",
+    "zpad": "^0.5.0"
+  }
+}

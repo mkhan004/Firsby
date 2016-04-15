@@ -1,0 +1,1 @@
+{ "status": "Completed","id": {{3.sequenceId}}, "title": "{{3.title}}", "assessmentFields": [{ "score": {{4.parsedAnswers.verify.percentCorrect}} }] }

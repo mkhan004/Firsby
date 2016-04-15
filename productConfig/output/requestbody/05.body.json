@@ -1,0 +1,74 @@
+{
+  "responses": [
+    {
+      "type": "SingleAnswerMultipleChoice",
+      "position": "0",
+      "subItem": "0",
+      "mSecUsed": 123,
+      "selectedIndex": 0
+    },
+    {
+      "type": "SingleAnswerMultipleChoice",
+      "position": "1",
+      "subItem": "0",
+      "mSecUsed": 123,
+      "selectedIndex": 3
+    },
+    {
+      "type": "SingleAnswerMultipleChoice",
+      "position": "2",
+      "subItem": "0",
+      "mSecUsed": 123,
+      "selectedIndex": 1
+    },
+    {
+      "type": "SingleAnswerMultipleChoice",
+      "position": "3",
+      "subItem": "0",
+      "mSecUsed": 123,
+      "selectedIndex": 2
+    },
+    {
+      "type": "SingleAnswerMultipleChoice",
+      "position": "4",
+      "subItem": "0",
+      "mSecUsed": 123,
+      "selectedIndex": 0
+    },
+    {
+      "type": "SingleAnswerMultipleChoice",
+      "position": "5",
+      "subItem": "0",
+      "mSecUsed": 123,
+      "selectedIndex": 0
+    },
+    {
+      "type": "SingleAnswerMultipleChoice",
+      "position": "6",
+      "subItem": "0",
+      "mSecUsed": 123,
+      "selectedIndex": 2
+    },
+    {
+      "type": "SingleAnswerMultipleChoice",
+      "position": "7",
+      "subItem": "0",
+      "mSecUsed": 123,
+      "selectedIndex": 4
+    },
+    {
+      "type": "SingleAnswerMultipleChoice",
+      "position": "8",
+      "subItem": "0",
+      "mSecUsed": 123,
+      "selectedIndex": 5
+    },
+    {
+      "type": "SingleAnswerMultipleChoice",
+      "position": "9",
+      "subItem": "0",
+      "mSecUsed": 123,
+      "selectedIndex": 8
+    }
+  ]
+}

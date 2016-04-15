@@ -1,0 +1,38 @@
+{
+  "statusCode": 401,
+  "body": "{\"meta\":{\"version\":1,\"status_code\":401},\"results\":{\"error\":{\"type\":\"KeyError\",\"message\":\"No api_key specified.\"}}}",
+  "headers": {
+    "access-control-allow-credentials": "true",
+    "access-control-allow-headers": "Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token",
+    "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS, PATCH, HEAD",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "content-type, content-length, X-ApiaxleProxy-Qps-Left, X-ApiaxleProxy-Qpd-Left",
+    "content-type": "application/json",
+    "date": "Fri, 15 Apr 2016 15:15:44 GMT",
+    "server": "nginx/1.8.0",
+    "version": "20160212",
+    "content-length": "114",
+    "connection": "Close"
+  },
+  "request": {
+    "uri": {
+      "protocol": "https:",
+      "slashes": true,
+      "auth": null,
+      "host": "api.atom.ktp.io",
+      "port": 443,
+      "hostname": "api.atom.ktp.io",
+      "hash": null,
+      "search": null,
+      "query": null,
+      "pathname": "/h/productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC",
+      "path": "/h/productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC",
+      "href": "https://api.atom.ktp.io/h/productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC"
+    },
+    "method": "GET",
+    "headers": {
+      "authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiYXBwbGljYXRpb24iLCJhcHBJZCI6ImF0b20uYXBpIiwiYnVzaW5lc3NlcyI6W3siaWQiOiJLVFAiLCJuYW1lIjoiS1RQIn0seyJpZCI6IldBWU5FRU5URVJQUklTRVMiLCJuYW1lIjoiV2F5bmUgRW50ZXJwcmlzZXMifV0sInZlcnNpb24iOjEsImlhdCI6MTQ1MjYzMjc4NywiZXhwIjoxMDAwMDAwMDAwMDAwMDAwMDAsImlzcyI6ImdhdGV3YXkifQ.GIsREMfBja3-X5i4y38UVC-BXI1R02a0UiYOTBvtErw",
+      "content-type": "application/x-www-form-urlencoded"
+    }
+  }
+}

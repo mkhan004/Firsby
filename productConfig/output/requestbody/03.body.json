@@ -1,0 +1,50 @@
+{
+  "reuseFilters": [
+    "NoFiltering"
+  ],
+  "timeLimit": true,
+  "secondsPerItem": 81,
+  "countMode": 1,
+  "explanations": false,
+  "autoStart": false,
+  "hints": false,
+  "contentGroups": [
+    {
+      "name": "main",
+      "setFilterType": "NoFiltering",
+      "scoringFilterType": "ScoredOnly",
+      "dimensions": [
+        {
+          "name": "organSystems",
+          "categoryIds": [
+            20909,
+            20908,
+            20907,
+            20911,
+            20906,
+            20910,
+            20904,
+            20902,
+            20901,
+            20900
+          ]
+        },
+        {
+          "name": "discipline",
+          "categoryIds": [
+            20930,
+            20926,
+            20919,
+            20918,
+            20916,
+            20915
+          ]
+        }
+      ]
+    }
+  ],
+  "template": "fredQbankShell",
+  "unitsRequested": 10,
+  "path": "/USMLE/qbank/fredQbankShell",
+  "title": "Dec 11, 2015 | Qbank Quiz 2"
+}
