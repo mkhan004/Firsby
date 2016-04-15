@@ -3,16 +3,17 @@
 
   * This is first rule.
   * It is another rule.
+  * This is an Auto Ganerated Doc.
 
 ## To Run
 
   ```
   npm install -g jasmine-node
   npm install
-  jasmine-node . --config folder productConfig
   ```
 
-## Automated Test Cases
+jasmine-node . --config folder productConfig
+  ## Automated Test Cases
 01. Call WAYNEENTERPRISES/PRE-C/SAT/SATSGT and make sure response code is 200 and response contain data from Biz level config.
 
  ```
@@ -55,19 +56,19 @@
   * status: 200
   * path: productconfig/WAYNEENTERPRISES/K12/InvalidK12PRECO/KSPSATKT
  ```
-07. Call WAYNEENTERPRISES/HEALTH/IELTS/IELTSOS and make sure response code is 200 and response contain marged content from both Biz and Product level config.
-
- ```
-  * method: GET
-  * status: 200
-  * path: productconfig/WAYNEENTERPRISES/HEALTH/IELTS/IELTSOS
- ```
 08. Call WAYNEENTERPRISES/HEALTH/IELTS/InvalidIELTSOS and make sure response code is 200 and response contain content only from Biz level config.
 
  ```
   * method: GET
   * status: 200
   * path: productconfig/WAYNEENTERPRISES/HEALTH/IELTS/InvalidIELTSOS
+ ```
+07. Call WAYNEENTERPRISES/HEALTH/IELTS/IELTSOS and make sure response code is 200 and response contain marged content from both Biz and Product level config.
+
+ ```
+  * method: GET
+  * status: 200
+  * path: productconfig/WAYNEENTERPRISES/HEALTH/IELTS/IELTSOS
  ```
 09. Call WAYNEENTERPRISES/GRAD/GRE/GRENC and make sure response code is 200 and response contain marged content from all Biz, Sbu, Program and Product level config.
 
@@ -76,14 +77,14 @@
   * status: 200
   * path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
  ```
-10. Call WAYNEENTERPRISES/GRAD/GRE/GRENC without atom-api-key and make sure response code is 401 and response proper error message.
+11. Call WAYNEENTERPRISES/GRAD/GRE/GRENC with invalid atom-api-key and make sure response code is 401 and response proper error message.
 
  ```
   * method: GET
   * status: 401
   * path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
  ```
-11. Call WAYNEENTERPRISES/GRAD/GRE/GRENC with invalid atom-api-key and make sure response code is 401 and response proper error message.
+10. Call WAYNEENTERPRISES/GRAD/GRE/GRENC without atom-api-key and make sure response code is 401 and response proper error message.
 
  ```
   * method: GET
@@ -111,19 +112,19 @@
   * status: 403
   * path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
  ```
-15. Call WAYNEENTERPRISES/GRAD/InvalidGRE/GRENC and make sure response code is 200 and response contain content only from Biz and Sbu level config.
-
- ```
-  * method: GET
-  * status: 200
-  * path: productconfig/WAYNEENTERPRISES/GRAD/InvalidGRE/GRENC
- ```
 14. Call WAYNEENTERPRISES/GRAD/GRE/InvalidGRENC and make sure response code is 200 and response contain content only from Biz, Sbu and Program level config.
 
  ```
   * method: GET
   * status: 200
   * path: productconfig/WAYNEENTERPRISES/GRAD/GRE/InvalidGRENC
+ ```
+15. Call WAYNEENTERPRISES/GRAD/InvalidGRE/GRENC and make sure response code is 200 and response contain content only from Biz and Sbu level config.
+
+ ```
+  * method: GET
+  * status: 200
+  * path: productconfig/WAYNEENTERPRISES/GRAD/InvalidGRE/GRENC
  ```
 16. Call WAYNEENTERPRISES/InvalidGRAD/GRE/GRENC and make sure response code is 200 and response contain content only from Biz level config.
 
@@ -146,19 +147,19 @@
   * status: 500
   * path: productconfig/WAYNEENTERPRISES/GRADM2/GRADMP/GRADMPROD
  ```
-19. Call WAYNEENTERPRISES/GRADM2/InvalidGRADMP/GRADMPROD and make sure response code is 200 and response contain content only from Biz and Sbu level config.
-
- ```
-  * method: GET
-  * status: 200
-  * path: productconfig/WAYNEENTERPRISES/GRADM2/InvalidGRADMP/GRADMPROD
- ```
 20. Call WAYNEENTERPRISES/GRADM3/GRADMP/GRADMPROD and make sure response code is 500 and response contain proper error message.
 
  ```
   * method: GET
   * status: 500
   * path: productconfig/WAYNEENTERPRISES/GRADM3/GRADMP/GRADMPROD
+ ```
+19. Call WAYNEENTERPRISES/GRADM2/InvalidGRADMP/GRADMPROD and make sure response code is 200 and response contain content only from Biz and Sbu level config.
+
+ ```
+  * method: GET
+  * status: 200
+  * path: productconfig/WAYNEENTERPRISES/GRADM2/InvalidGRADMP/GRADMPROD
  ```
 21. Call WAYNEENTERPRISES/GRADM3/GRADMP/InvalidGRADMPROD and make sure response code is 200 and response contain content only from Biz, Sbu and program level config.
 

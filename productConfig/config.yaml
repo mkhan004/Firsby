@@ -14,6 +14,7 @@
   businessRules:
     1: This is first rule.
     2: It is another rule.
+    3: This is an Auto Ganerated Doc.
 
   toRun:
     1: npm install -g jasmine-node
