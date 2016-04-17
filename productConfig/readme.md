@@ -1,27 +1,27 @@
-# Product Config API
+# Product Config API Test
 ## Business Rules 
 
-  * This is first rule.
   * It is another rule.
+  * This is first rule.
 
-## To Run
+  * This is an Auto Ganerated Doc.
+npm install -g jasmine-node
+  ## To Run
 
   ```
-    * This is an Auto Ganerated Doc.
-npm install
-  npm install -g jasmine-node
-  testEnv = qa/stg/prod/gateway-qa/gateway-stg/gateway-prod
+  npm install
   NODE_ENV=<testEnv> jasmine-node . --config folder productConfig
-  ```
-
-## Automated Test Cases
-01. Call WAYNEENTERPRISES/PRE-C/SAT/SATSGT and make sure response code is 200 and response contain data from Biz level config.
+  testEnv = qa/stg/prod/gateway-qa/gateway-stg/gateway-prod
+  01. Call WAYNEENTERPRISES/PRE-C/SAT/SATSGT and make sure response code is 200 and response contain data from Biz level config.
 
  ```
   * method: GET
   * status: 200
   * path: productconfig/WAYNEENTERPRISES/PRE-C/SAT/SATSGT
  ```
+## Automated Test Cases
+```
+
 02. Call InvalidWAYNEENTERPRISES/PRE-C/SAT/SATSGT and make sure response code is 404 and response contain proper error message.
 
  ```
@@ -57,13 +57,6 @@ npm install
   * status: 200
   * path: productconfig/WAYNEENTERPRISES/K12/InvalidK12PRECO/KSPSATKT
  ```
-07. Call WAYNEENTERPRISES/HEALTH/IELTS/IELTSOS and make sure response code is 200 and response contain marged content from both Biz and Product level config.
-
- ```
-  * method: GET
-  * status: 200
-  * path: productconfig/WAYNEENTERPRISES/HEALTH/IELTS/IELTSOS
- ```
 08. Call WAYNEENTERPRISES/HEALTH/IELTS/InvalidIELTSOS and make sure response code is 200 and response contain content only from Biz level config.
 
  ```
@@ -77,6 +70,13 @@ npm install
   * method: GET
   * status: 200
   * path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
+ ```
+07. Call WAYNEENTERPRISES/HEALTH/IELTS/IELTSOS and make sure response code is 200 and response contain marged content from both Biz and Product level config.
+
+ ```
+  * method: GET
+  * status: 200
+  * path: productconfig/WAYNEENTERPRISES/HEALTH/IELTS/IELTSOS
  ```
 10. Call WAYNEENTERPRISES/GRAD/GRE/GRENC without atom-api-key and make sure response code is 401 and response proper error message.
 
@@ -113,6 +113,13 @@ npm install
   * status: 403
   * path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
  ```
+14. Call WAYNEENTERPRISES/GRAD/GRE/InvalidGRENC and make sure response code is 200 and response contain content only from Biz, Sbu and Program level config.
+
+ ```
+  * method: GET
+  * status: 200
+  * path: productconfig/WAYNEENTERPRISES/GRAD/GRE/InvalidGRENC
+ ```
 15. Call WAYNEENTERPRISES/GRAD/InvalidGRE/GRENC and make sure response code is 200 and response contain content only from Biz and Sbu level config.
 
  ```
@@ -126,13 +133,6 @@ npm install
   * method: GET
   * status: 200
   * path: productconfig/WAYNEENTERPRISES/InvalidGRAD/GRE/GRENC
- ```
-14. Call WAYNEENTERPRISES/GRAD/GRE/InvalidGRENC and make sure response code is 200 and response contain content only from Biz, Sbu and Program level config.
-
- ```
-  * method: GET
-  * status: 200
-  * path: productconfig/WAYNEENTERPRISES/GRAD/GRE/InvalidGRENC
  ```
 17. Call WAYNEENTERPRISES/GRADM/GRADMP/GRADMPROD and make sure response code is 500 and response contain proper error message.
 

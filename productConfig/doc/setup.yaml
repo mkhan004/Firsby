@@ -1,5 +1,5 @@
 ---
-  project: Product Config API
+  project: Product Config API Test
   businessRules:
     1: This is first rule.
     2: It is another rule.
