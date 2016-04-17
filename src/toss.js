@@ -32,8 +32,7 @@ module.exports = class Toss {
   }
 
   writeTestCases(){
-    utils.writeSameFile(this.config, this.req);
-    // utils.writeSameFile(`${this.config.basePath}/readme.md`, `${zpad(this.req.id)}. ${this.req.description}`, this.req.method, this.req.validate.statusCode, this.req.path);
+    utils.writeOnExistingFile(this.config, this.req);
   }
 
   afterRequests(responses) {
@@ -89,15 +88,12 @@ module.exports = class Toss {
     if (val.notjson) {
       let json = utils.loadFile(this.config.basePath, val.notjson);
       let values = this.bindResponses(json);
-      //this.toss.not().expectJSON(values);
       this.toss.afterJSON(function(body) {
 
         traverse(values).forEach(function(x) {
 
           //testerInstance.expectEqual(body.sections[0].title, values);
         });
-
-        //testerInstance.expectEqual(body.sections[0].title, 'values');
       });
     }
     if (val.jsonSchema) {

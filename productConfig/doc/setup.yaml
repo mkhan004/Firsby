@@ -1,12 +1,12 @@
 ---
-  # PROD Gateway
   project: Product Config API
-
   businessRules:
     1: This is first rule.
     2: It is another rule.
-
+    3: This is an Auto Ganerated Doc.
   toRun:
     1: npm install -g jasmine-node
     2: npm install
-    3: jasmine-node . --config folder productConfig
+    3: NODE_ENV=<testEnv> jasmine-node . --config folder productConfig
+    4: testEnv = qa/stg/prod/gateway-qa/gateway-stg/gateway-prod
+

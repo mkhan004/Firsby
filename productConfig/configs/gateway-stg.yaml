@@ -1,0 +1,10 @@
+---
+  # STG Gateway
+  url: https://stg-api.atom.ktp.io
+  defaultPath: h/
+  port: 443
+  project: Product Config API
+  environment: QA
+  requestFile: requests.yaml
+  apiKey: atomqateam
+  tokenSecret: f717uxhMStolc0CQgca58WtLLtfcculN

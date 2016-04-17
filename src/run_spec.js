@@ -5,23 +5,18 @@ const Tosser = require('./tosser');
 const fs = require('fs');
 
 let folder = process.env.folder || '.';
-let configFile = process.env.file || 'config.yaml';
+let testEnv = process.env.NODE_ENV;
 
+let configFile = process.env.file || `/configs/${testEnv}.yaml`;
 let config = utils.loadYAMLOrParse(folder, configFile);
+
 config.basePath = folder || '.';
 
-let docFolders = config.requestFolders || ['doc'];
-utils.writeReadmeFile(config);
+let docFile = process.env.file || `doc/setup.yaml`;
+let doc = utils.loadYAMLOrParse(folder, docFile);
 
-for (let docFolder of docFolders) {
-  let path = `${folder}/${docFolder}`;
-  let docs = fs.readdirSync(path);
-  for (let doc of docs) {
-    console.log(doc);
-    let content = utils.loadYAMLOrParse(path, 'setup.yaml');
-    //utils.writeReadmeFile(content);
-  }
-}
+doc.basePath = folder || '.';
+utils.writeReadmeFile(doc);
 
 let requestFolders = config.requestFolders || ['requests'];
 

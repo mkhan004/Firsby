@@ -49,7 +49,6 @@ exports.writeReadmeFile = (config) => {
         fs.appendFile(path, "## Business Rules \n\n");
         for(let key in businessRules){
           fs.appendFile(path, `  * ` + businessRules[key]+"\n");
-          console.log(businessRules[key]);
         }
         fs.appendFile(path, "\n");
       }
@@ -68,7 +67,7 @@ exports.writeReadmeFile = (config) => {
   }
 };
 
-exports.writeSameFile = (config, req) => {
+exports.writeOnExistingFile = (config, req) => {
   try {
     let path = `${config.basePath}/readme.md`;
     let description = req.description;

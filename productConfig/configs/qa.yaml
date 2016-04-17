@@ -1,0 +1,8 @@
+---
+  # QA
+  url: https://qa-productconfig.atom.ktp.io
+  defaultPath: api/v1/
+  port: 443
+  requestFile: requests.yaml
+  apiKey: atomqateam
+  tokenSecret: electron
