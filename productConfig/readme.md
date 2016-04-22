@@ -1,33 +1,28 @@
 # Product Config API Test
 ## Business Rules 
 
-  * It is another rule.
   * This is first rule.
-
+  * It is another rule.
   * This is an Auto Ganerated Doc.
-npm install -g jasmine-node
-  ## To Run
+  * This is a test doc
+
+## To Run
 
   ```
+  npm install -g jasmine-node
   npm install
+  jasmine-node . --config folder productConfig --config testEnv <testEnv>
   NODE_ENV=<testEnv> jasmine-node . --config folder productConfig
   testEnv = qa/stg/prod/gateway-qa/gateway-stg/gateway-prod
-  01. Call WAYNEENTERPRISES/PRE-C/SAT/SATSGT and make sure response code is 200 and response contain data from Biz level config.
+  ```
+
+## Automated Test Cases
+01. Call WAYNEENTERPRISES/PRE-C/SAT/SATSGT and make sure response code is 200 and response contain data from Biz level config.
 
  ```
   * method: GET
   * status: 200
   * path: productconfig/WAYNEENTERPRISES/PRE-C/SAT/SATSGT
- ```
-## Automated Test Cases
-```
-
-02. Call InvalidWAYNEENTERPRISES/PRE-C/SAT/SATSGT and make sure response code is 404 and response contain proper error message.
-
- ```
-  * method: GET
-  * status: 404
-  * path: productconfig/InvalidWAYNEENTERPRISES/PRE-C/SAT/SATSGT
  ```
 03. Call WAYNEENTERPRISES/NURSING/NCLEX/NCLEXP and make sure response code is 200 and response contain marged content from both Biz and Sbu level config.
 
@@ -35,6 +30,13 @@ npm install -g jasmine-node
   * method: GET
   * status: 200
   * path: productconfig/WAYNEENTERPRISES/NURSING/NCLEX/NCLEXP
+ ```
+02. Call InvalidWAYNEENTERPRISES/PRE-C/SAT/SATSGT and make sure response code is 404 and response contain proper error message.
+
+ ```
+  * method: GET
+  * status: 404
+  * path: productconfig/InvalidWAYNEENTERPRISES/PRE-C/SAT/SATSGT
  ```
 04. Call WANEENTERPRISES/InvalidNURSING/NCLEX/NCLEXP and make sure response code is 200 and response contain content only from Biz level config.
 
@@ -57,6 +59,13 @@ npm install -g jasmine-node
   * status: 200
   * path: productconfig/WAYNEENTERPRISES/K12/InvalidK12PRECO/KSPSATKT
  ```
+07. Call WAYNEENTERPRISES/HEALTH/IELTS/IELTSOS and make sure response code is 200 and response contain marged content from both Biz and Product level config.
+
+ ```
+  * method: GET
+  * status: 200
+  * path: productconfig/WAYNEENTERPRISES/HEALTH/IELTS/IELTSOS
+ ```
 08. Call WAYNEENTERPRISES/HEALTH/IELTS/InvalidIELTSOS and make sure response code is 200 and response contain content only from Biz level config.
 
  ```
@@ -71,13 +80,6 @@ npm install -g jasmine-node
   * status: 200
   * path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
  ```
-07. Call WAYNEENTERPRISES/HEALTH/IELTS/IELTSOS and make sure response code is 200 and response contain marged content from both Biz and Product level config.
-
- ```
-  * method: GET
-  * status: 200
-  * path: productconfig/WAYNEENTERPRISES/HEALTH/IELTS/IELTSOS
- ```
 10. Call WAYNEENTERPRISES/GRAD/GRE/GRENC without atom-api-key and make sure response code is 401 and response proper error message.
 
  ```
@@ -85,14 +87,14 @@ npm install -g jasmine-node
   * status: 401
   * path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
  ```
-11. Call WAYNEENTERPRISES/GRAD/GRE/GRENC with invalid atom-api-key and make sure response code is 401 and response proper error message.
+12. Call WAYNEENTERPRISES/GRAD/GRE/GRENC without Authorization Bearer Token and make sure response code is 401 and response proper error message.
 
  ```
   * method: GET
   * status: 401
   * path: productconfig/WAYNEENTERPRISES/GRAD/GRE/GRENC
  ```
-12. Call WAYNEENTERPRISES/GRAD/GRE/GRENC without Authorization Bearer Token and make sure response code is 401 and response proper error message.
+11. Call WAYNEENTERPRISES/GRAD/GRE/GRENC with invalid atom-api-key and make sure response code is 401 and response proper error message.
 
  ```
   * method: GET
